@@ -35,8 +35,13 @@ function testSpeech() {
         var center = {lat: results[0].geometry.location.lat(), lng: results[0].geometry.location.lng()};
         var map = new google.maps.Map(document.getElementById('map'), {
           center: center,
-          zoom: 18,
+          zoom: 16,
           mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var marker = new google.maps.Marker({
+          position: center,
+          map: map,
+          title: speechResult
         });
         //map.setCenter(center);
       }
